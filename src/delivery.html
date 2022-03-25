@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/pages/delivery/header.html')
+    @include('partials/basket-menu.html')
+    <main class="main">
+      <div class="container">
+        @include('partials/breadcrumbs.html')
+        <div class="delivery">
+          <h1 class="delivery__title title">Правила и условия доставки</h1>
+          <div class="delivery__top">
+            <div class="delivery__left">
+              <h2 class="delivery__sub-title">Доставка по Москве</h2>
+              <p class="delivery__text">Доставка продукции по Москве в <br> пределах МКАД </p>
+              <p class="delivery__price">350 ₽</p>
+            </div>
+            <div class="delivery__right">
+              <div class="delivery__img">
+                <img src="img/delivery/img.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="delivery__bottom">
+            <div class="delivery__box">
+              <div class="delivery__descr">Доставка по России, СНГ и в другие страны мира</div>
+              <p class="delivery__text">
+                Сроки доставки "от двери до двери" по России составляют в <span>среднем 2-5 дней</span>, отправка
+                заказов
+                осуществляется после предоплаты на карту банка или путём оплаты через платёжные системы Вестерн Юнион,
+                Корона, Юнистрим и другие.
+              </p>
+              <p class="delivery__text">
+                При отправке заказа вам будет выслан номер его накладной, по которому можно отслеживать движение груза
+                он-лайн на сайте транспортной компании.
+              </p>
+            </div>
+            <div class="delivery__map">
+              <img src="img/delivery/map.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      @include('partials/basket.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

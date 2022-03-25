@@ -1,0 +1,242 @@
+.basket {
+  position: fixed;
+  right: 90px;
+  top: 230px;
+  z-index: 101;
+  @media (max-width: 1366px) {
+    right: 40px;
+    top: 200px;
+  }
+  @media (max-width: 992px) {
+    display: none;
+  }
+
+  // .basket__button
+
+  &__button {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #de3c4f;
+    box-shadow: 0px 20px 20px rgba(193, 34, 53, 0.1);
+    border-radius: 30px;
+    width: 80px;
+    height: 80px;
+    transition: background 0.15s ease-in-out;
+    @media (max-width: 1366px) {
+      width: 60px;
+      height: 60px;
+    }
+    &:hover {
+      background: #c12235;
+    }
+    &:active {
+      background: darken(#c12235, 5);
+    }
+    img {
+      pointer-events: none;
+    }
+  }
+
+  // .basket__number
+
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 2px 6px;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ffffff;
+    background: #ffc700;
+    box-shadow: 0px 5px 5px rgba(99, 23, 23, 0.1);
+  }
+
+  // .basket__menu
+
+  &__menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    padding: 15px 18px 25px 18px;
+    position: fixed;
+    z-index: 100;
+    right: 90px;
+    top: 270px;
+    transform: translateY(10px);
+    background: #ffffff;
+    border-radius: 10px;
+    min-width: 310px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    transition: overflow 0.15s ease-in-out, visibility 0.15s ease-in-out,
+      opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    @media (max-width: 992px) {
+      top: 90px;
+      right: 30px;
+    }
+    @media (max-width: 900px) {
+      top: 90px;
+      right: 0;
+      width: 100%;
+      max-width: 370px;
+      height: 100%;
+      z-index: 98;
+      border-radius: 0;
+      padding-bottom: 110px;
+      overflow-y: auto;
+    }
+    @media (max-width: 580px) {
+      top: 111px;
+    }
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+  }
+
+  // .basket__title
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  // .basket__wrap
+
+  &__wrap {
+    overflow-y: auto;
+    max-height: 400px;
+    margin-bottom: 25px;
+    padding-right: 12px;
+    @media (max-width: 900px) {
+      max-height: 100%;
+    }
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ededed;
+      border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background: #91297b;
+    }
+  }
+
+  // .basket__items
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // .basket__item
+
+  &__item {
+    padding: 15px 10px;
+    background: #ffffff;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  // .basket__top
+
+  &__top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ededed;
+  }
+
+  // .basket__img
+
+  &__img {
+    width: 70px;
+    position: relative;
+    padding-bottom: 18%;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .basket__name
+
+  &__name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 34px;
+    color: #252020;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 10px;
+    max-width: 170px;
+  }
+
+  // .basket__bottom
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+  }
+
+  // .basket__scroll
+
+  &__scroll {
+    @media (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  // .basket__price
+
+  &__price {
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    color: #de3c4f;
+  }
+  // .basket__add
+
+  &__add {
+    width: 100%;
+    justify-content: center;
+    @media (max-width: 900px) {
+      margin-top: auto;
+    }
+  }
+}

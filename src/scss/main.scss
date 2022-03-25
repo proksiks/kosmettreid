@@ -1,0 +1,31 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/footer";
+@import "./components/title";
+@import "./components/btns";
+@import "./components/social";
+@import "./components/banner";
+@import "./components/prompt";
+@import "./components/head";
+@import "./components/products";
+@import "./components/card";
+@import "./components/left-menu";
+@import "./components/stock";
+@import "./components/advantages";
+@import "./components/basket";
+@import "./components/counter";
+@import "./components/breadcrumbs";
+@import "./components/table";
+@import "./components/price";
+@import "./components/sort";
+@import "./components/actions";
+@import "./components/delivery";
+@import "./components/order";
+@import "./components/consultation";
+@import "./components/social-buttons";

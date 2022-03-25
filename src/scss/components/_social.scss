@@ -1,0 +1,64 @@
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.social-icon {
+  flex: 0 0 33px;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  // .social-icon__link
+
+  &__link {
+    border-radius: 100%;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+
+    &.whatsapp {
+      background-color: #48c95f;
+      &:hover {
+        background-color: #39a74d;
+      }
+      &:active {
+        background-color: darken(#39a74d, 5);
+      }
+    }
+    &.telegram {
+      background-color: #2f89ce;
+      &:hover {
+        background-color: #2777b5;
+      }
+      &:active {
+        background-color: darken(#2777b5, 5);
+      }
+      svg {
+        margin-right: 2px;
+      }
+    }
+    &.viber {
+      background-color: #7c509a;
+      &:hover {
+        background-color: #6b4287;
+      }
+      &:active {
+        background-color: darken(#6b4287, 5);
+      }
+    }
+  }
+}

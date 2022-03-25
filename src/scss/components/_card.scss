@@ -1,0 +1,137 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @media (max-width: 1140px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+
+  // .card__item
+
+  &__item {
+  }
+
+  // .card__link
+
+  &__link {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    background: #ffffff;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    @media (min-width: 1141px) {
+      max-width: 285px;
+    }
+    @media (max-width: 1140px) {
+      max-width: 405px;
+    }
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
+    @media (max-width: 560px) {
+      max-width: 100%;
+    }
+    &:hover {
+      border: 1px solid darken(#ededed, 10);
+      box-shadow: 0px 0px 30px 0px rgba(34, 60, 80, 0.01);
+    }
+  }
+
+  // .card__img
+
+  &__img {
+    position: relative;
+    padding-bottom: 63%;
+    margin-bottom: 10px;
+    width: 100%;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .card__action
+
+  &__action {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    padding: 5px;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    &.blue {
+      background: #59acf9;
+    }
+    &.red {
+      background: #f84242;
+    }
+    &.orange {
+      background: #fa8a4b;
+    }
+    &.green {
+      background: #4fc05a;
+    }
+  }
+
+  // .card__title
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #252020;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 223px;
+    width: 100%;
+  }
+
+  // .card__prices
+
+  &__prices {
+    margin-bottom: 20px;
+  }
+
+  // .card__price
+
+  &__price {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4e4b4b;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    span {
+      color: #e25465;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+}

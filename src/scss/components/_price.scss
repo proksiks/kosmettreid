@@ -1,0 +1,25 @@
+.price {
+  // .price__sub-title
+
+  &__sub-title {
+    margin-bottom: 40px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+    &.decorate-title {
+      &::before {
+        flex: 0 0 30px;
+      }
+      &::before {
+        max-width: 200px;
+      }
+    }
+  }
+  // .price__sort
+  &__sort {
+    margin-bottom: 30px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+}

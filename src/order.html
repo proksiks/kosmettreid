@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/pages/order/header.html')
+    @include('partials/basket-menu.html')
+    <main class="main">
+      <div class="container">
+        @include('partials/breadcrumbs.html')
+        <div class="order">
+          <h1 class="order__title title">Заказ продукции</h1>
+          <div class="order__wrapper">
+            <div class="order__sub-title">Для заказа препаратов Вы можете связаться с нами следующим способом</div>
+            <div class="order__boxes">
+              <div class="order__box order__time">
+                Заказы принимаем ежедневно <br>
+                с 10.00 до 22.00, работаем без выходных
+              </div>
+              <div class="order__box order__phone">
+                <p>По телефону:</p> <a href="tel:+74956445547">+ 7 (495) 644-55-47</a>
+              </div>
+            </div>
+            <div class="order__sub-title">или через мессенджеры</div>
+            <div class="order__socials social-buttons">
+              <a class="btn btn_green social-buttons__btn" href="#">
+                <svg class=''>
+                  <use xlink:href='img/sprite.svg#white-icon-whatsapp'>
+                </svg>
+                WhatsApp
+              </a>
+              <a class="btn btn_blue social-buttons__btn" href="#">
+                <svg class=''>
+                  <use xlink:href='img/sprite.svg#white-icon-telegram'>
+                </svg>
+                Telegram
+              </a>
+              <a class="btn btn_purple social-buttons__btn" href="#">
+                <svg class=''>
+                  <use xlink:href='img/sprite.svg#white-icon-viber'>
+                </svg>
+                Viber
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      @include('partials/basket.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

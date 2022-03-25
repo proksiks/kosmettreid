@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/pages/consultation/header.html')
+    @include('partials/basket-menu.html')
+    <main class="main">
+      <div class="container">
+        @include('partials/breadcrumbs.html')
+        <div class="consultation">
+          <h1 class="consultation__title title">Консультации косметолога</h1>
+          <div class="consultation__body">
+            <div class="consultation__wrapper">
+              <div class="consultation__content">
+                <div class="consultation__box user">
+                  С настоящего момента Вы можете получить квалифицированную консультацию по применению препаратов у
+                  нашего
+                  штатного косметолога.
+                </div>
+                <div class="consultation__box message">
+                  Для получения консультации, напишите нам на номер <a href="tel:89856445547">8 (985) 644-55-47</a>
+                  через
+                  <a href="#">Viber</a> или <a href="#">WhatsApp</a>, сообщите
+                  Ваши данные, какой препарат Вас интересует и каких результатов ожидаете от его применения.
+                </div>
+                <div class="consultation__box profile">
+                  Наш специалист свяжется с Вами и предоставит интересующую Вас информацию.
+                </div>
+                <div class="consultation__socials social-buttons" data-da=".consultation__body,992,1">
+                  <a class="btn btn_green social-buttons__btn" href="#">
+                    <svg class=''>
+                      <use xlink:href='img/sprite.svg#white-icon-whatsapp'>
+                    </svg>
+                    WhatsApp
+                  </a>
+                  <a class="btn btn_blue social-buttons__btn" href="#">
+                    <svg class=''>
+                      <use xlink:href='img/sprite.svg#white-icon-telegram'>
+                    </svg>
+                    Telegram
+                  </a>
+                  <a class="btn btn_purple social-buttons__btn" href="#">
+                    <svg class=''>
+                      <use xlink:href='img/sprite.svg#white-icon-viber'>
+                    </svg>
+                    Viber
+                  </a>
+                </div>
+              </div>
+              <div class="consultation__img" data-da=".consultation__body,900,1">
+                <img src="img/consultation/consultant.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      @include('partials/basket.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/pages/close-price/header.html')
+    @include('partials/basket-menu.html')
+    <main class="main">
+      <div class="container">
+        @include('partials/breadcrumbs.html')
+        @include('partials/pages/close-price/tables.html')
+      </div>
+      @include('partials/basket.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

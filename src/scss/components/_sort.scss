@@ -1,0 +1,58 @@
+.sort {
+  padding: 20px 25px;
+  background: #ffffff;
+  border: 1px solid #ededed;
+  border-radius: 6px;
+
+  //.sort__desctop
+  &__desctop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  // .sort__title
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    color: #252020;
+  }
+
+  // .sort__btn
+
+  &__btn {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 14px;
+    line-height: 34px;
+    color: #4e4b4b;
+    transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+    &.active {
+      color: #de3c4f;
+    }
+  }
+
+  //.sort__select
+  &__select {
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: #252020;
+    background: none;
+    border: none;
+    width: 100%;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

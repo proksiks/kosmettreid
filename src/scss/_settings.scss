@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  &.disable-scroll {
+    overflow: hidden;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 30px;
+  @media (max-width: 480px) {
+    padding: 0 15px;
+  }
+}
+
+.main {
+  min-height: 80vh;
+}

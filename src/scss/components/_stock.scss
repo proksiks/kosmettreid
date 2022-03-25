@@ -1,0 +1,36 @@
+.stock {
+  display: inline-block;
+  border-top: 1px solid #ededed;
+  padding-top: 10px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    .stock__svg {
+      fill: #c12235;
+    }
+    .stock__text {
+      color: #c12235;
+    }
+  }
+  // .stock__svg
+
+  &__svg {
+    margin-right: 4px;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    fill: #91297b;
+    transition: fill 0.15s ease-in-out;
+  }
+
+  // .stock__text
+
+  &__text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #de3c4f;
+    transition: color 0.15s ease-in-out;
+  }
+}

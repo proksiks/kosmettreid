@@ -1,0 +1,143 @@
+.order {
+  margin-bottom: 50px;
+  @media (max-width: 992px) {
+    margin-bottom: 40px;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 30px;
+  }
+  // .order__title
+
+  &__title {
+    margin-bottom: 50px;
+    @media (max-width: 992px) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 480px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .order__wrapper
+
+  &__wrapper {
+    padding: 10px 85px 85px 85px;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    @media (max-width: 1100px) {
+      padding: 10px 30px 30px 30px;
+    }
+    @media (max-width: 505px) {
+      padding: 0 20px 10px 20px;
+    }
+  }
+
+  // .order__sub-title
+
+  &__sub-title {
+    text-align: center;
+    margin: 40px 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #252020;
+    @media (max-width: 1100px) {
+      margin: 25px 0;
+    }
+    @media (max-width: 992px) {
+      font-size: 22px;
+    }
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+    @media (max-width: 480px) {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+  }
+
+  // .order__boxes
+
+  &__boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    @media (max-width: 1130px) {
+      gap: 30px;
+    }
+    @media (max-width: 992px) {
+      padding: 0 100px;
+    }
+    @media (max-width: 950px) {
+      padding: 0;
+    }
+    @media (max-width: 670px) {
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // .order__box
+
+  &__box {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px 20px 90px;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4e4b4b;
+    background-size: 38px 38px;
+    background-position: 30px 50%;
+    background-repeat: no-repeat;
+
+    @media (max-width: 992px) {
+      padding: 80px 30px 20px 30px;
+      background-position: 50% 25px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      padding: 80px 20px 20px 20px;
+      font-size: 14px;
+    }
+
+    a {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #252020;
+      transition: opacity 0.2s ease-in-out;
+      @media (max-width: 992px) {
+        display: block;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  // .order__time
+
+  &__time {
+    background-image: url("/img/icons/security-time.svg");
+  }
+
+  // .order__phone
+
+  &__phone {
+    background-image: url("/img/icons/call-calling.svg");
+  }
+}

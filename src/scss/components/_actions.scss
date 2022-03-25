@@ -1,0 +1,129 @@
+.actions {
+  margin-bottom: 60px;
+  @media (max-width: 992px) {
+    margin-bottom: 40px;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 30px;
+  }
+  //.actions__title
+
+  &__title {
+    margin-bottom: 50px;
+    @media (max-width: 992px) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 480px) {
+      margin-bottom: 20px;
+    }
+  }
+  //.actions__block
+
+  &__block {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  //.actions__btn
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    button {
+      @media (max-width: 570px) {
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  @media (max-width: 1080px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 570px) {
+    grid-template-columns: 1fr;
+  }
+  .card__item {
+    grid-column: 3 span;
+    @media (max-width: 1080px) {
+      grid-column: auto;
+    }
+    &:first-child,
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(16),
+    &:nth-child(17) {
+      grid-column: 9 span;
+      grid-row: 1 span;
+      @media (max-width: 1200px) {
+        grid-column: 3 span;
+      }
+      @media (max-width: 1080px) {
+        grid-column: auto;
+      }
+      .card__content {
+        @media (min-width: 1201px) {
+          width: 100%;
+        }
+      }
+      .card__link {
+        @media (min-width: 1201px) {
+          align-items: center;
+          flex-direction: row;
+          justify-content: flex-start;
+          max-width: 100%;
+        }
+      }
+      .card__action {
+        @media (min-width: 1201px) {
+          top: -27px;
+        }
+      }
+      .card__img {
+        @media (min-width: 1201px) {
+          padding-bottom: 28%;
+          max-width: 350px;
+          margin-bottom: 0;
+          margin-right: 30px;
+        }
+      }
+      .card__title {
+        @media (min-width: 1201px) {
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 34px;
+          color: #252020;
+          padding-bottom: 30px;
+          margin-bottom: 30px;
+          max-width: 470px;
+        }
+        @media (max-width: 1200px) {
+          font-size: 18px;
+        }
+      }
+      .card__prices {
+        @media (min-width: 1201px) {
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+  .card__link {
+    @media (max-width: 1080px) {
+      max-width: 100%;
+    }
+  }
+}
