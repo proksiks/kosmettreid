@@ -489,10 +489,7 @@ a {
   }
 }
 .header__link:hover {
-  color: #d9d9d9;
-}
-.header__link:active {
-  color: #bfbfbf;
+  color: #FFC700;
 }
 .header__link.active {
   color: #FFC700;
@@ -858,7 +855,7 @@ a {
 }
 .btn_cart {
   padding-left: 63px;
-  background-image: url("/img/icons/cart.svg");
+  background-image: url("../img/icons/cart.svg");
   background-repeat: no-repeat;
   background-position: 28px 13px;
   background-size: 24px 24px;
@@ -878,11 +875,15 @@ a {
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;
-  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 .btn_transparent:hover {
+  -webkit-box-shadow: 1px 1px 0 0 #c12235 inset, -1px -1px 0 0 #c12235 inset;
+  box-shadow: 1px 1px 0 0 #c12235 inset, -1px -1px 0 0 #c12235 inset;
   border: 1px solid #c12235;
   color: #de3c4f;
 }
@@ -1185,12 +1186,12 @@ a {
   transform: translateX(0px);
 }
 .head__link svg {
-  margin-left: 13px;
+  margin-left: 9px;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 24px;
-  flex: 0 0 24px;
-  width: 24px;
-  height: 24px;
+  -ms-flex: 0 0 14px;
+  flex: 0 0 14px;
+  width: 14px;
+  height: 10px;
   fill: #91297b;
   -webkit-transition: fill 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   transition: fill 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
@@ -1200,7 +1201,7 @@ a {
 }
 
 .products {
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 @media (min-width: 871px) {
@@ -1326,9 +1327,8 @@ a {
   }
 }
 .card__link:hover {
-  border: 1px solid #d4d4d4;
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(34, 60, 80, 0.01);
-  box-shadow: 0px 0px 30px 0px rgba(34, 60, 80, 0.01);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03), 0px 20px 20px -10px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03), 0px 20px 20px -10px rgba(0, 0, 0, 0.07);
 }
 .card__img {
   position: relative;
@@ -1347,7 +1347,7 @@ a {
 }
 .card__action {
   position: absolute;
-  top: 15px;
+  top: 0;
   left: 0;
   padding: 5px;
   border-radius: 2px;
@@ -1384,6 +1384,12 @@ a {
   text-overflow: ellipsis;
   max-width: 223px;
   width: 100%;
+  -webkit-transition: color 0.15s ease-in-out;
+  -o-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+.card__title:hover {
+  color: #c12235;
 }
 .card__prices {
   margin-bottom: 20px;
@@ -1397,7 +1403,7 @@ a {
   margin-bottom: 5px;
 }
 .card__price span {
-  color: #e25465;
+  color: #df3c4f;
   font-size: 18px;
   font-weight: 700;
 }
@@ -2109,6 +2115,8 @@ a {
   margin: 0;
   font-weight: 700;
   color: #252020;
+  font-size: 15px;
+  line-height: 34px;
 }
 .sort__btn {
   padding: 0;
@@ -2665,10 +2673,10 @@ a {
   margin: 0;
 }
 .order__time {
-  background-image: url("/img/icons/security-time.svg");
+  background-image: url("../img/icons/security-time.svg");
 }
 .order__phone {
-  background-image: url("/img/icons/call-calling.svg");
+  background-image: url("../img/icons/call-calling.svg");
 }
 
 .consultation {
@@ -2747,13 +2755,13 @@ a {
   }
 }
 .consultation__box.user {
-  background-image: url("/img/icons/user.svg");
+  background-image: url("../img/icons/user.svg");
 }
 .consultation__box.message {
-  background-image: url("/img/icons/message.svg");
+  background-image: url("../img/icons/message.svg");
 }
 .consultation__box.profile {
-  background-image: url("/img/icons/profile.svg");
+  background-image: url("../img/icons/profile.svg");
 }
 .consultation__box a {
   color: #de3c4f;

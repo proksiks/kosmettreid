@@ -112,7 +112,7 @@
   }
   &_cart {
     padding-left: 63px;
-    background-image: url("/img/icons/cart.svg");
+    background-image: url("../img/icons/cart.svg");
     background-repeat: no-repeat;
     background-position: 28px 13px;
     background-size: 24px 24px;
@@ -128,8 +128,10 @@
     font-weight: 700;
     font-size: 15px;
     line-height: 20px;
-    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
     &:hover {
+      box-shadow: 1px 1px 0 0 #c12235 inset, -1px -1px 0 0 #c12235 inset;
       border: 1px solid #c12235;
       color: #de3c4f;
       svg {
