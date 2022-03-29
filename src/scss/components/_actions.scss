@@ -61,11 +61,7 @@
     @media (max-width: 1080px) {
       grid-column: auto;
     }
-    &:first-child,
-    &:nth-child(8),
-    &:nth-child(9),
-    &:nth-child(16),
-    &:nth-child(17) {
+    &.block {
       grid-column: 9 span;
       grid-row: 1 span;
       @media (max-width: 1200px) {
