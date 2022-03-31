@@ -109,6 +109,11 @@
         @media (max-width: 1200px) {
           font-size: 18px;
         }
+        &:hover {
+          @media (min-width: 1201px) {
+            color: #c12235;
+          }
+        }
       }
       .card__prices {
         @media (min-width: 1201px) {

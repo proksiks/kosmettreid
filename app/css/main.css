@@ -2306,6 +2306,11 @@ a {
   }
 }
 @media (min-width: 1201px) {
+  .action-grid .card__item.block .card__title:hover {
+    color: #c12235;
+  }
+}
+@media (min-width: 1201px) {
   .action-grid .card__item.block .card__prices {
     margin-bottom: 35px;
   }
