@@ -339,13 +339,13 @@
     font-weight: 700;
     line-height: 1.6;
     color: #ffffff;
-    padding: 3px 53px;
+    padding: 3px 80px;
     transition: color 0.15s ease-in-out;
     @media (max-width: 1290px) {
-      padding: 3px 27px;
+      padding: 3px 49px;
     }
-    @media (max-width: 992px) {
-      padding: 3px 15px;
+    @media (max-width: 991px) {
+      padding: 3px 20px;
     }
     @media (max-width: 900px) {
       padding: 20px 0;
