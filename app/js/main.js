@@ -7,7 +7,7 @@
   \*******************************/
 /***/ (() => {
 
-var _document3, _document6, _document7, _document8, _document9, _document10;
+var _document3, _document6, _document7, _document8, _document9;
 
 if (document.querySelector('.header__top')) {
   function getHeaderHeight() {
@@ -19,7 +19,7 @@ if (document.querySelector('.header__top')) {
     header.style.top = '-' + (getTopHeader + 1) + 'px';
   }
 
-  addEventListener('resize', getHeaderHeight());
+  window.addEventListener('resize', getHeaderHeight());
 }
 
 if (document.querySelector('.header__bottom') && (_document3 = document) !== null && _document3 !== void 0 && _document3.querySelector('.left-menu')) {
@@ -32,7 +32,7 @@ if (document.querySelector('.header__bottom') && (_document3 = document) !== nul
     menu.style.top = getBottomHeader + 20 + 'px';
   }
 
-  addEventListener('resize', getOffsetTop());
+  window.addEventListener('resize', getOffsetTop());
 }
 
 var actualYear = (_document6 = document) === null || _document6 === void 0 ? void 0 : _document6.querySelector('.actual-year');
@@ -40,34 +40,11 @@ var actualYear = (_document6 = document) === null || _document6 === void 0 ? voi
 if (actualYear) {
   var date = new Date().getFullYear();
   actualYear.innerHTML = date;
-} // counter
-
-
-var counterElem = (_document7 = document) === null || _document7 === void 0 ? void 0 : _document7.querySelectorAll('.counter');
-
-if (counterElem) {
-  counterElem.forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      var input = this.querySelector('.counter__summ');
-      var minus = this.querySelector('.counter__btn_minus');
-      var plus = this.querySelector('.counter__btn_plus');
-
-      if (e.target === minus) {
-        if (input.value >= 2) {
-          input.value--;
-        }
-      }
-
-      if (e.target === plus) {
-        input.value++;
-      }
-    });
-  });
 } // Open basket
 
 
-var basketBtn = (_document8 = document) === null || _document8 === void 0 ? void 0 : _document8.querySelector('.basket__button');
-var basketMenu = (_document9 = document) === null || _document9 === void 0 ? void 0 : _document9.querySelector('.basket__menu');
+var basketBtn = (_document7 = document) === null || _document7 === void 0 ? void 0 : _document7.querySelector('.basket__button');
+var basketMenu = (_document8 = document) === null || _document8 === void 0 ? void 0 : _document8.querySelector('.basket__menu');
 
 if (basketBtn) {
   basketBtn.addEventListener('click', function (e) {
@@ -75,7 +52,7 @@ if (basketBtn) {
   });
 }
 
-var headerBasketBtn = (_document10 = document) === null || _document10 === void 0 ? void 0 : _document10.querySelector('.header__basket');
+var headerBasketBtn = (_document9 = document) === null || _document9 === void 0 ? void 0 : _document9.querySelector('.header__basket');
 
 if (headerBasketBtn) {
   headerBasketBtn.addEventListener('click', function (e) {
@@ -84,14 +61,62 @@ if (headerBasketBtn) {
   });
 }
 
+var basket = document.querySelector('.basket__items');
+var cartBtn = document.querySelector('.btn_cart');
 window.addEventListener('click', function (e) {
   if (!headerNav.contains(e.target) && !headerMenu.contains(e.target)) {
     headerNav.classList.remove('active');
     headerMenu.classList.remove('active');
   }
 
-  if (!basketMenu.contains(e.target) && !basketBtn.contains(e.target) && !headerBasketBtn.contains(e.target)) {
+  if (!basketMenu.contains(e.target) && !basketBtn.contains(e.target) && !headerBasketBtn.contains(e.target) && !e.target.closest('.card__item')) {
     basketMenu.classList.remove('active');
+  } //Counter
+
+
+  var counter;
+
+  if (e.target.classList.contains('counter__btn_plus') || e.target.classList.contains('counter__btn_minus')) {
+    var counterWrapper = e.target.closest('.counter');
+    counter = counterWrapper.querySelector('.counter__summ');
+  }
+
+  if (e.target.classList.contains('counter__btn_plus')) {
+    counter = ++counter.value;
+  }
+
+  if (e.target.classList.contains('counter__btn_minus')) {
+    if (counter.value > 1) {
+      counter = --counter.value;
+    } else if (e.target.closest('.basket__items') && counter.value == 1) {
+      e.target.closest('.basket__item').remove();
+      toggleCartStatus();
+    }
+  } // add to card
+
+
+  if (e.target.classList.contains('btn_cart')) {
+    var card = e.target.closest('.card__item');
+    var cardProduct = {
+      id: card.dataset.productId,
+      img: card.querySelector('.card__img').querySelector('img').getAttribute('src'),
+      name: card.querySelector('.card__title').innerText,
+      prices: {
+        price: card.querySelector('.card__prices').querySelector('span').innerText,
+        tradePrice: card.querySelector('.card__prices').querySelector('span').innerText
+      }
+    };
+    var itemInCart = basket.querySelector("[data-product-id=\"".concat(cardProduct.id, "\"]"));
+
+    if (itemInCart) {
+      var counterElement = itemInCart.querySelector('.counter__summ');
+      counterElement.value = ++counterElement.value;
+    } else {
+      var cardInnerProduct = "<li class=\"basket__item\" data-product-id=\"".concat(cardProduct.id, "\">\n          <div class=\"basket__top\">\n            <div class=\"basket__img\">\n                <img src=\"").concat(cardProduct.img, "\" alt=\"\">\n            </div>\n            <div class=\"basket__name\">").concat(cardProduct.name, "</div>\n          </div>\n          <div class=\"basket__bottom\">\n            <div class=\"counter\">\n              <button class=\"counter__btn counter__btn_minus\" type=\"button\"></button>\n              <input class=\"counter__summ\" type=\"text\" value=\"1\">\n              <button class=\"counter__btn counter__btn_plus\" type=\"button\"></button>\n            </div>\n            <div class=\"basket__price\">").concat(cardProduct.prices.price, "</div>\n          </div>\n        </li>\n      ");
+      basket.insertAdjacentHTML('beforeend', cardInnerProduct);
+    }
+
+    toggleCartStatus();
   }
 });
 var headerMenu = document.querySelector('.header__menu');
@@ -100,6 +125,17 @@ headerMenu.addEventListener('click', function () {
   headerNav.classList.toggle('active');
   headerMenu.classList.toggle('active');
 });
+
+function toggleCartStatus() {
+  var cartEmptyBadge = document.querySelector('.basket__empty');
+  var cartProducts = document.querySelector('.basket__items');
+
+  if (cartProducts.children.length > 0) {
+    cartEmptyBadge.classList.add('none');
+  } else {
+    cartEmptyBadge.classList.remove('none');
+  }
+}
 
 /***/ }),
 

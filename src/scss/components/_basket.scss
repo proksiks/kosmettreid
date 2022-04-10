@@ -11,6 +11,16 @@
     display: none;
   }
 
+  // .basket__empty
+  &__empty {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    &.none {
+      display: none;
+    }
+  }
   // .basket__button
 
   &__button {
@@ -125,7 +135,6 @@
     overflow-y: auto;
     max-height: 400px;
     margin-bottom: 25px;
-    padding-right: 12px;
     @media (max-width: 900px) {
       max-height: 100%;
     }
